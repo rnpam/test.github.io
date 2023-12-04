@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>アプリダウンロードページ</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <link rel="icon" type="image/png" href="img/favicon.png">
+  <link rel="icon" type="image/png" href="img/卵なしチャーハン.gif">
+  
+  <link rel="stylesheet" media="all" href="css/main.css">
+  <script src="js/jquery-3.6.0.min.js"></script>
+  <script src="js/style.js"></script>
+
+</head>
+
+<body>
+  <div class="slideshow-container">
+    <div class="mySlides">
+        <img src="ヌコ.png" alt="Image 1">
+    </div>
+    <div class="mySlides">
+        <img src="卵なしチャーハン.gif" alt="Image 2">
+    </div>
+    <!-- 追加の画像を同じように追加 -->
+  </div>
+
+  <script>
+    let slideIndex = 0;
+    carousel();
+
+    function carousel() {
+        let i;
+        const slides = document.getElementsByClassName("mySlides");
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {
+            slideIndex = 1;
+        }
+        slides[slideIndex - 1].style.display = "block";
+        setTimeout(carousel, 1000); // 1秒ごとにスライドを変更
+    }
+  </script>
+</body>
+
+</html>
