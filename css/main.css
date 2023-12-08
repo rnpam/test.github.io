@@ -1,74 +1,19 @@
-header {
-  background-color: #333;
-  color: #fff;
-  padding: 20px;
+.box_srcollbar {
+    overflow:auto;
+    width:300px;
+    height:80px;
+    padding:5px;
+    border:1px solid #000;
+    background-color:#F9F9F9;
+    color:#000;
+    font-size:12px;
 }
-
-.list-container {
-  position: relative;
-}
-
-.list-container ul {
-  display: none; /* 最初はリストを非表示に設定 */
-  position: absolute;
-  left: 0;
-  top: 0;
-  background-color: #f2f2f2;
-  padding: 10px;
-  border: 1px solid #ccc;
-  transition: opacity 0.5s ease; /* リストの表示を0.5秒かけてアニメーション化 */
-  opacity: 0; /* 非表示に設定 */
-}
-
-.list-container:hover ul {
-  display: block; /* カーソルが領域に入ったときにリストを表示 */
-  opacity: 1; /* 表示にする */
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
-}
-
-.col1 {
-  display: flex;
-}
-
-.col1 li:nth-child(1) {
-  display: none;
-  height: 670px;
-  width: 10%;
-  background-color: #83b2e6;
-  padding: 10px;
-  position: fixed;
-}
-
-.col1 li:nth-child(1):hover{
-  display: block;
-  opacity: 1;
-}
-
-.col1 li:nth-child(2) {
-  margin-left: 10%;
-  height: 670px;
-  width: 60%;
-  background-color: #f2f2f2;
-  padding: 10px;
-}
-
-ul,
-li {
-    height: 690px;
-    padding-left: 0;
-    margin-top: 0;
-    margin-bottom: 0;
-    list-style: none;
-}
-
-li {
-    background: #ccc;
-    text-align: center;
-    padding: 30px 0;
-    border: 1px solid #fff;
+.box_title{
+    border:1px solid #000;
+    padding:5px;
+    width:300px;
+    font-weight:bold;
+    font-size:14px;
+    background-color:#000;
+    color:#fff;
 }
