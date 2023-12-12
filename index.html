@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
 
 <head>
   <meta charset="UTF-8">
@@ -10,7 +10,11 @@
   <link rel="icon" type="image/png" href="img/favicon.png">
   <link rel="stylesheet" media="all" href="css/test.css">
   <script src="js/jquery-3.6.0.min.js"></script>
-  <script src="js/style.js"></script>
+  <script src="js/test.js"></script>
+  <!--==============レイアウトを制御する独自のCSSを読み込み===============-->
+  <link rel="stylesheet" type="text/css" href="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/reset.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+  <link rel="stylesheet" type="text/css" href="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-1-6/css/6-1-6.css">
 </head>
 
 <body>
@@ -25,15 +29,19 @@
             </li>
             <li>
                 <h1 class="title_font">あなたの料理、共有しませんか</h1>
-                <img src="img/卵なしチャーハン.gif" alt="卵チャーハンのGIF画像" height="550px" width="60%">
+                <img src="img/卵なしチャーハン.gif" alt="卵チャーハンのGIF画像" height="100%" width="60%">
             </li>
             <li>
                 <h1>最新情報</h1>
-                <ul class="col4">
-                    <li>2023/12/06  現在開発途中でごわす</li>
-                    <li>2023/12/05  サイトの一般公開はじまめした！</li>
-                    <li>2023/11/20  サイトの運営始めました。運営のO.M.です。2023/11/20  サイトの運営始めました。運営のO.M.です。2023/11/20  サイトの運営始めました。運営のO.M.です。2023/11/20  サイトの運営始めました。運営のO.M.です。</li>
-                </ul>
+                <div class="box">
+                    <p>
+                        2023/12/31  良いお年を！！<br>
+                        2023/12/12  最新情報公開の欄が完成しました<br>
+                        2023/12/5   発表会がありました<br>
+                        2023/11/20  サイトの開発始めました<br>
+                        2023/10/31  開発中でごわす<br>
+                    </p>
+                </div>
             </li>
         </ul>
         <ul class="col2">
@@ -49,9 +57,15 @@
                 <h4>
                     このまま下に行くとアプリのダウンロードページへ飛びます<br>
                 </h4>
-                <img src="img/mein.png" alt="メイン画面" height="400px" width="200px">
-
-                </a>
+                <p>
+                <div class ="slide-pic">
+                    <div id ="slide" class="slideshow">
+                        <p class="disc"></p> 
+                        <a class="arrow next" id="right" href="javascript:void(0);"></a>
+                        <a class="arrow back" id="left" href="javascript:void(0);"></a>
+                    </div>
+                </div>
+                </p>
             </li>
             <li>
                 <h1>利用規約</h1>
@@ -112,4 +126,9 @@
       </div>
     </footer>
   </div>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <script src="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-1-6/js/6-1-6.js"></script>
+
 </body>
