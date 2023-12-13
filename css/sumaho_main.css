@@ -5,7 +5,7 @@ h1{
 }
 
 .wrapper{
-    min-height: 100vh;
+    min-height: 100vh;/*最低でも開いた状態の画面全体*/
     position: relative;/*←相対位置*/
     padding-bottom: 120px;/*←footerの高さ*/
     box-sizing: border-box;/*←全て含めてmin-height:100vhに*/
@@ -26,59 +26,78 @@ body {
     background-color: #f2f2f2;
 }
 
+.jump{
+    display: flex;
+    font-size: 10px;
+    color: #000;
+    background-color: #ccc;
+    padding: 0%;
+    margin: 0px;
+}
+.jump li:nth-child(1){
+    height: 30px;
+    width: 33%;
+}
+.jump li:nth-child(2){
+    height: 30px;
+    width: 33%;
+}
+.jump li:nth-child(3){
+    height: 30px;
+    width: 34%;
+}
+
 /*１段目*/
 .col1 {
-    display: flex;
+    display: table;
 }
-  
 .col1 li:nth-child(1) {
-    height: 670px;
-    width: 10%;
+    height: 350px;
+    min-width: 100vw;
     padding: 10px;
     background-color: #f2f2f2;
 } 
-
-.col1 li:nth-child(2) {
-    height: 670px;
-    width: 60%;
-    padding: 10px;
-    background-color: #f2f2f2;
-}
-
-.col1 li:nth-child(3) {
-    height: 670px;
-    width: 30%;
-    padding: 10px;
-    background-color: #f2f2f2;
-}
-
-.box{
-    max-height: 100px; /* ボックスの高さ */
-    max-width: 100%; /* ボックスの幅 */
-    background-color: #f0f0f0; /* 背景色 */
-    border: 1px solid #ccc; /* ボーダー */
-    padding: 20px; /* 内側の余白 */
-    box-sizing: border-box; /* ボックスサイズの計算方式をborder-boxに */
-    overflow: auto;
-    padding: 0%;
-}
-
-
-/* ボックス内のテキストのスタイル */
-.box p {
-    margin: 0; /* テキストのマージンをリセット */
-    font-size: 16px; /* フォントサイズ */
-    color: #333; /* テキストの色 */
-    padding: 0%;
-    text-align: left;
-  }
 
 /*２段目*/
 .col2{
     display: flex;
 }
-
 .col2 li:nth-child(1) {
+    height: 400px;
+    width: 70%;
+    background-color: #f2f2f2;
+}
+.col2 li:nth-child(2) {
+    height: 400px;
+    width: 30%;
+    background-color: #f2f2f2;
+}
+.box{
+    max-height: 200px; /* ボックスの高さ */
+    max-width: 90%; /* ボックスの幅 */
+    background-color: #f0f0f0; /* 背景色 */
+    border: 1px solid #ccc; /* ボーダー */
+    padding: 10px; /* 内側の余白 */
+    box-sizing: border-box; /* ボックスサイズの計算方式をborder-boxに */
+    overflow: auto;
+    padding: 0px;
+    margin: 5%;
+}
+/* ボックス内のテキストのスタイル */
+.box p {
+    margin: 0; /* テキストのマージンをリセット */
+    font-size: 15px; /* フォントサイズ */
+    color: #333; /* テキストの色 */
+    padding: 0%;
+    text-align: left;
+}
+
+/*3段目*/
+.col3{
+    display: flex;
+}
+
+.col3 li:nth-child(1) {
     height: 670px;
     width: 10%;
     background-color: #f2f2f2;
@@ -188,56 +207,52 @@ body {
 ここまで
 ==========================================================*/
 
-.col2 li:nth-child(2) {
+.col3 li:nth-child(1) {
     height: 670px;
-    width: 50%;
+    width: 100%;
     background-color: #f2f2f2;
-    padding: 10px;
 }
 
-.col2 li:nth-child(3) {
-    height: 670px;
-    width: 20%;
-    background-color: #f2f2f2;
-    padding: 10px;
+/*４段目*/
+.col4{
+    display: table;
 }
 
-.col2 li:nth-child(4) {
-    height: 670px;
-    width: 20%;
+.col4 li:nth-child(1) {
+    height: 50%;
+    width: 100vw;
     background-color: #f2f2f2;
-    padding: 10px;
 }
 
-/*３段目*/
-.col3{
+.col4 li:nth-child(2) {
+    height: 50%;
+    min-width: 100vw;
+    background-color: #f2f2f2;
+}
+
+/*5段目*/
+.col5{
     display: flex;
 }
 
-.col3 li:nth-child(1) {
+.col5 li:nth-child(1) {
     height: 670px;
-    width: 10%;
+    width: 33vw;
+    background-color: #f2f2f2;
+    padding: 10px;
+    
+}
+
+.col5 li:nth-child(2) {
+    height: 670px;
+    width: 33vw;
     background-color: #f2f2f2;
     padding: 10px;
 }
 
-.col3 li:nth-child(2) {
+.col5 li:nth-child(3) {
     height: 670px;
-    width: 30%;
-    background-color: #f2f2f2;
-    padding: 10px;
-}
-
-.col3 li:nth-child(3) {
-    height: 670px;
-    width: 30%;
-    background-color: #f2f2f2;
-    padding: 10px;
-}
-
-.col3 li:nth-child(4) {
-    height: 670px;
-    width: 30%;
+    width: 34vw;
     background-color: #f2f2f2;
     padding: 10px;
 }
@@ -255,7 +270,6 @@ li {
 li {
     background: #ccc;
     text-align: center;
-    padding: 30px 0;
     border: 1px solid #000;
 }
 
@@ -281,9 +295,9 @@ footer{
 }
 
 .footer-menu{
-    background-color: #ccc;
+    background-color: #333;
     border: 1px solid #000;
-    height: auto;
+    height: 270px;
     width: 100vw;
     right: 0;
     color: #f2f2f2;
@@ -300,10 +314,14 @@ footer{
     margin: 0;
 }
 
-button {
-    background-color: #000;
-    color: #000;
-    font-size: 15px;
-    padding: 10px 10px;
-    line-height: 1.5; /* 適切な倍率を調整してください */
+.btn--orange,
+a.btn--orange {
+  color: #000;
+  background-color: #f2f2f2;
+  padding: 1px;
+}
+.btn--orange:hover,
+a.btn--orange:hover {
+  color: #000;
+  background: #f2f2f2;
 }
