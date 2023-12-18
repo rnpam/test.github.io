@@ -1,309 +1,108 @@
 @charset "utf-8";
 
+/*========= スクロール途中でヘッダーが表示＆非表示するためのCSS ===============*/
+
+#header{
+    /*fixedで上部固定*/
+  position: fixed;
+  height: 70px;
+  width:100%;
+    z-index: 999;/*最前面へ*/
+  /*以下はレイアウトのためのCSS*/
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background:#333;
+  color:#fff;
+  text-align: center;
+  padding: 20px;
+}
+
+/*　上に上がる動き　*/
+
+#header.UpMove{
+  animation: UpAnime 0.5s forwards;
+}
+
+@keyframes UpAnime{
+  from {
+    opacity: 1;
+  transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+  transform: translateY(-100px);
+  }
+}
+
+/*　下に下がる動き　*/
+
+#header.DownMove{
+  animation: DownAnime 0.5s forwards;
+}
+@keyframes DownAnime{
+  from {
+    opacity: 0;
+  transform: translateY(-100px);
+  }
+  to {
+    opacity: 1;
+  transform: translateY(0);
+  }
+}
+
+/*========= レイアウトのためのCSS ===============*/
+
 h1{
-    margin-top: 0px;
+  font-size:1.2rem;
 }
 
-.wrapper{
-    min-height: 100vh;
-    position: relative;/*←相対位置*/
-    padding-bottom: 120px;/*←footerの高さ*/
-    box-sizing: border-box;/*←全て含めてmin-height:100vhに*/
+h2{
+  font-size:1.2rem;
+  text-align: center;
+  margin: 0 0 30px 0;
 }
 
-/*ヘッダー*/
-header {
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
+p{
+  margin-top:20px;  
 }
 
-/*ボディ*/
-body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f2f2f2;
-}
-
-/*１段目*/
-.col1 {
-    display: flex;
-}
-  
-.col1 li:nth-child(1) {
-    height: 670px;
-    width: 10%;
-    padding: 10px;
-    background-color: #f2f2f2;
-} 
-
-.col1 li:nth-child(2) {
-    height: 670px;
-    width: 60%;
-    padding: 10px;
-    background-color: #f2f2f2;
-}
-
-.col1 li:nth-child(3) {
-    height: 670px;
-    width: 30%;
-    padding: 10px;
-    background-color: #f2f2f2;
-}
-
-.box{
-    max-height: 100px; /* ボックスの高さ */
-    max-width: 100%; /* ボックスの幅 */
-    background-color: #f0f0f0; /* 背景色 */
-    border: 1px solid #ccc; /* ボーダー */
-    padding: 20px; /* 内側の余白 */
-    box-sizing: border-box; /* ボックスサイズの計算方式をborder-boxに */
-    overflow: auto;
-    padding: 0%;
+small{
+  background:#333;
+  color:#fff;
+  display: block;
+  text-align: center;
+  padding:20px;
 }
 
 
-/* ボックス内のテキストのスタイル */
-.box p {
-    margin: 0; /* テキストのマージンをリセット */
-    font-size: 16px; /* フォントサイズ */
-    color: #333; /* テキストの色 */
-    padding: 0%;
-    text-align: left;
-  }
-
-/*２段目*/
-.col2{
-    display: flex;
+nav ul{
+  list-style: none;
+  display: flex;
+  justify-content: center;
 }
 
-.col2 li:nth-child(1) {
-    height: 670px;
-    width: 10%;
-    background-color: #f2f2f2;
-    padding: 10px;
+nav ul li a{
+  display: block;
+  text-decoration: none;
+  color: #666;
+  padding:10px;
+  transition:all 0.3s;
 }
 
-/*==================================================
-スライダーのためのcss
-===================================*/
-.slide-pic{
-    max-width: 120%;
-    height: 400px;
-    margin: auto;
-    padding-left: 35%;
-}
-/*画像配置*/
-.slideshow{
-    max-width: 210px;
-    height: 450px;
-    background-image: url("");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 0% 0%;
-}
-/*文字*/
-.disc{
-    margin: auto;
-    text-align: center;
-    font-size: 3em;
-    color: #000;
-    font-weight: 800;
-    padding-top:5%;
-}
-/*>*/
-.next{
-    float: right;
-    top: 50%;
-    right: -10px;
-}
-/*<*/
-.back{
-    float: left;
-    bottom: -50%;
-    left: -30px;
-}
-/*矢印のデザイン*/
-.arrow{
-    position: relative;
-    display: inline-block;
-    padding: 0 0 0 16px;
-    color: #000;
-    vertical-align: middle;
-    text-decoration: none;
-    font-size: 15px;
-}
-.arrow::before,
-.arrow::after{
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    margin: auto;
-    content: "";
-    vertical-align: middle;
+nav ul li.current a,
+nav ul li a:hover,
+nav ul li a:active{
+  color:#fff; 
 }
 
-.next::before{
-    left: 0px;
-    width: 30px;
-    height: 30px;
-    border-top: 5px solid #000;
-    border-right: 5px solid #000;
-    -webkit-transform: rotate(45deg);
-    transform: rotate(45deg);
+main {
+      padding-top: 70px;
 }
-.back::before{
-    left: 0px;
-    width: 30px;
-    height: 30px;
-    border-bottom: 5px solid #000;
-    border-left: 5px solid #000;
-    -webkit-transform: rotate(45deg);
-    transform: rotate(45deg);
-}
-/* CSSアニメーションの指定 */
-.slideshow{
-    transition: background-image 1s ease-in;
+section{
+  padding:30px;
 }
 
-@media screen and (max-width:200px) { 
-  .slide-pic{
-    height: auto;
-  }
-    .disc{
-        padding-top:5%;
-    }
-    /*>*/
-    .next{
-        top: 30px;
-    }
-    /*<*/
-    .back{
-        top: 30px;
-    }
-}
-/*====================================
-ここまで
-==========================================================*/
-
-.col2 li:nth-child(2) {
-    height: 670px;
-    width: 50%;
-    background-color: #f2f2f2;
-    padding: 10px;
-}
-
-.col2 li:nth-child(3) {
-    height: 670px;
-    width: 20%;
-    background-color: #f2f2f2;
-    padding: 10px;
-}
-
-.col2 li:nth-child(4) {
-    height: 670px;
-    width: 20%;
-    background-color: #f2f2f2;
-    padding: 10px;
-}
-
-/*３段目*/
-.col3{
-    display: flex;
-}
-
-.col3 li:nth-child(1) {
-    height: 670px;
-    width: 10%;
-    background-color: #f2f2f2;
-    padding: 10px;
-}
-
-.col3 li:nth-child(2) {
-    height: 670px;
-    width: 30%;
-    background-color: #f2f2f2;
-    padding: 10px;
-}
-
-.col3 li:nth-child(3) {
-    height: 670px;
-    width: 30%;
-    background-color: #f2f2f2;
-    padding: 10px;
-}
-
-.col3 li:nth-child(4) {
-    height: 670px;
-    width: 30%;
-    background-color: #f2f2f2;
-    padding: 10px;
-}
-
-/*liの詳細*/
-ul,
-li {
-    padding-left: 0;
-    margin-top: 0;
-    margin-bottom: 0;
-    list-style: none;
-    font-size: 15px;
-}
-
-li {
-    background: #ccc;
-    text-align: center;
-    padding: 30px 0;
-    border: 1px solid #000;
-}
-
-/*ボトム*/
-footer{
-    width: 100%;
-    background-color: #89c7de;
-    color: #fff;
-    text-align: center;
-
-    position: absolute;/*←絶対位置*/
-    bottom: 0; /*下に固定*/
-}
-
-.footer-member{
-    background-color: #333;
-    border: 1px solid #000;
-    height: 100px;
-    width: 100vw;
-    right: 0;
-    color: #f2f2f2;
-    margin: 0;
-}
-
-.footer-menu{
-    background-color: #ccc;
-    border: 1px solid #000;
-    height: auto;
-    width: 100vw;
-    right: 0;
-    color: #f2f2f2;
-    margin: 0;
-}
-
-.footer-footer{
-    background-color: #333;
-    border: 1px solid #000;
-    height: 100px;
-    width: 100vw;
-    right: 0;
-    color: #f2f2f2;
-    margin: 0;
-}
-
-button {
-    background-color: #000;
-    color: #000;
-    font-size: 15px;
-    padding: 10px 10px;
-    line-height: 1.5; /* 適切な倍率を調整してください */
+section:nth-child(2n){
+  background:#f3f3f3; 
 }
